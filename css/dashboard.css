@@ -5,9 +5,35 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
+  
 }
 
-
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: url(../img/bg.png)  no-repeat center 0px;
+	background-size: cover;
+ 
+	
+ 
+     background-position: center 0; 
+     background-repeat: no-repeat;  
+     background-attachment: fixed; 
+      -webkit-background-size: cover;  
+      -o-background-size: cover;  
+      -moz-background-size: cover;  
+      -ms-background-size: cover;
+	
+}
+.jumbotron{
+  margin-top:50px;
+}
+.row{
+  margin-bottom:100px;
+  margin-right:50px;
+  margin-left:50px;
+}
 /*
  * Global add-ons
  */

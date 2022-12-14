@@ -12,25 +12,82 @@
       die("连接失败: " . $conn->connect_error);
   } 
 
-  $q=$_GET["q"];
-  if(empty($q)) {
+  $a=$_GET["a"];
+  $b=$_GET["b"];
+  $c=$_GET["c"];
+  $d=$_GET["d"];
+  $e=$_GET["e"];
+  if(empty($a)&&empty($b)&&empty($c)&&empty($d)&&empty($e)) {
     echo "传入为空";
     exit;
   }
-
-  $sql = "SELECT * FROM test_table;";
-  $result = $conn->query($sql);
-  
-  $response = "学科名称"."\t"."课程作业提交时间"."<br>";
-  if ($result->num_rows > 0) {
+  if(!empty($a)){
+    $sql = "SELECT * FROM XXXX WHERE id = '".$a."'";
+    $result = $conn->query($sql);
+    $response = "学科名称"."\t"."课程作业提交时间"."<br>";
+    if ($result->num_rows > 0) {
       // 输出数据
       while($row = $result->fetch_assoc()) {
           $response .= $row["name"]. "\t". $row["value"]. "<br>";
       }
-  } else {
-      echo "0 结果";
+    } else {
+      echo "结果:".$a;
+    }
   }
+  else if(!empty($b)){
+    $sql = "SELECT * FROM XXXX WHERE id = '".$b."'";
+    $result = $conn->query($sql);
+    $response = "学科名称"."\t"."课程作业提交时间"."<br>";
+    if ($result->num_rows > 0) {
+      // 输出数据
+      while($row = $result->fetch_assoc()) {
+          $response .= $row["name"]. "\t". $row["value"]. "<br>";
+      }
+    } else {
+      echo "结果:".$b;
+    }
+  }
+  else if(!empty($c)){
+    $sql = "SELECT * FROM XXXX WHERE id = '".$c."'";
+    $result = $conn->query($sql);
+    $response = "学科名称"."\t"."课程作业提交时间"."<br>";
+    if ($result->num_rows > 0) {
+      // 输出数据
+      while($row = $result->fetch_assoc()) {
+          $response .= $row["name"]. "\t". $row["value"]. "<br>";
+      }
+    } else {
+      echo "结果:".$c;
+    }
+  }
+  else if(!empty($d)){
+    $sql = "SELECT * FROM XXXX WHERE id = '".$d."'";
+    $result = $conn->query($sql);
+    $response = "学科名称"."\t"."课程作业提交时间"."<br>";
+    if ($result->num_rows > 0) {
+      // 输出数据
+      while($row = $result->fetch_assoc()) {
+          $response .= $row["name"]. "\t". $row["value"]. "<br>";
+      }
+    } else {
+      echo "结果:".$d;
+    }
+  }
+  else if(!empty($e)){
+    $sql = "SELECT * FROM XXXX WHERE id = '".$e."'";
+    $result = $conn->query($sql);
+    $response = "学科名称"."\t"."课程作业提交时间"."<br>";
+    if ($result->num_rows > 0) {
+      // 输出数据
+      while($row = $result->fetch_assoc()) {
+          $response .= $row["name"]. "\t". $row["value"]. "<br>";
+      }
+    } else {
+      echo "结果:".$e;
+    }
+  }
+  
   $conn->close();
   echo $response
 ?>
-
+}

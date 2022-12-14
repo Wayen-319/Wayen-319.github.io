@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>电影检索系统</title>
+    <title>电影检索</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -32,11 +32,11 @@
 
   <body>
     <script>
-      function showHint(str)
+      function showHint_a(str)
       {
           if (str=="")
           {
-              document.getElementById("txtHint_1").innerHTML="";
+              document.getElementById("txtHint_a").innerHTML="";
               return;
           } 
           if (window.XMLHttpRequest)
@@ -53,24 +53,132 @@
           {
               if (xmlhttp.readyState==4 && xmlhttp.status==200)
               {
-                  document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+                  document.getElementById("txtHint_a").innerHTML=xmlhttp.responseText;
               }
           }
-          xmlhttp.open("GET","http://localhost:3000/link.php?q="+str,true);
+          xmlhttp.open("GET","http://localhost:3000/link.php?a="+str,true);
+          xmlhttp.send();
+      }
+    </script>
+    <script>
+      function showHint_b(str)
+      {
+          if (str=="")
+          {
+              document.getElementById("txtHint_b").innerHTML="";
+              return;
+          } 
+          if (window.XMLHttpRequest)
+          {
+              // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+              xmlhttp=new XMLHttpRequest();
+          }
+          else
+          {
+              // IE6, IE5 浏览器执行代码
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+              {
+                  document.getElementById("txtHint_b").innerHTML=xmlhttp.responseText;
+              }
+          }
+          xmlhttp.open("GET","http://localhost:3000/link.php?b="+str,true);
+          xmlhttp.send();
+      }
+    </script>
+    <script>
+      function showHint_c(str)
+      {
+          if (str=="")
+          {
+              document.getElementById("txtHint_c").innerHTML="";
+              return;
+          } 
+          if (window.XMLHttpRequest)
+          {
+              // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+              xmlhttp=new XMLHttpRequest();
+          }
+          else
+          {
+              // IE6, IE5 浏览器执行代码
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+              {
+                  document.getElementById("txtHint_c").innerHTML=xmlhttp.responseText;
+              }
+          }
+          xmlhttp.open("GET","http://localhost:3000/link.php?c="+str,true);
+          xmlhttp.send();
+      }
+    </script>
+    <script>
+      function showHint_d(str)
+      {
+          if (str=="")
+          {
+              document.getElementById("txtHint_d").innerHTML="";
+              return;
+          } 
+          if (window.XMLHttpRequest)
+          {
+              // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+              xmlhttp=new XMLHttpRequest();
+          }
+          else
+          {
+              // IE6, IE5 浏览器执行代码
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+              {
+                  document.getElementById("txtHint_d").innerHTML=xmlhttp.responseText;
+              }
+          }
+          xmlhttp.open("GET","http://localhost:3000/link.php?d="+str,true);
+          xmlhttp.send();
+      }
+    </script>
+    <script>
+      function showHint_e(str)
+      {
+          if (str=="")
+          {
+              document.getElementById("txtHint_e").innerHTML="";
+              return;
+          } 
+          if (window.XMLHttpRequest)
+          {
+              // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+              xmlhttp=new XMLHttpRequest();
+          }
+          else
+          {
+              // IE6, IE5 浏览器执行代码
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+              {
+                  document.getElementById("txtHint_e").innerHTML=xmlhttp.responseText;
+              }
+          }
+          xmlhttp.open("GET","http://localhost:3000/link.php?e="+str,true);
           xmlhttp.send();
       }
     </script>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="#">基于分布式数据库的电影检索系统</a>
-        </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">数据库</a></li>
@@ -81,43 +189,76 @@
         </div>
       </div>
     </nav>
-
+    <br>
+    <div class="container">
+      <div class="jumbotron">
+          <h1>欢迎使用电影检索系统！<small>这里能够:</small></h1>
+          <br>
+          <p><em>&emsp;&emsp;根据输入的关键词查找电影</em></p>
+          <p><em>&emsp;&emsp;&emsp;&emsp;查询一个用户看过的电影及其评分</em></p>
+          <p><em>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查询一种风格最受欢迎的Top20电影</em></p>
+          <p><em>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;根据性别推荐最受欢迎的Top20电影</em></p>
+          <p><em>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;查看不同性别间对电影评分的差异</em></p>
+        </p>
+      </div>
+    </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md main">
-          <h2 class="page-header">控制面板</h2>
-
+          <h2 class="page-header"><strong>控制面板</strong></h2>
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <form>
-              SQL查询语句: <input type="text" onkeyup="showHint(this.value)"> 
-              </form>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">A.检索电影</span>
+              <input type="text" class="form-control" placeholder="用户ID" aria-describedby="sizing-addon1" onkeyup="showHint_a(this.value)">
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <form>
-              SQL查询语句: <input type="text" onkeyup="showHint(this.value)"> 
-              </form>
+            <br>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">B.检索电影</span>
+              <input type="text" class="form-control" placeholder="关键词" aria-describedby="sizing-addon1" onkeyup="showHint_b(this.value)">
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <form>
-              SQL查询语句: <input type="text" onkeyup="showHint(this.value)"> 
-              </form>
+            <br>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">C.检索电影</span>
+                <select class="form-select btn-lg btn-block btn-outline-light text-dark" name="users" onchange="showHint_c(this.value)">
+                  <option value="">选择一个风格:</option>
+                  <option value="1">Google</option>
+                  <option value="2">淘宝</option>
+                  <option value="3">菜鸟教程</option>
+                  <option value="4">微博</option>
+                  <option value="5">Facebook</option>
+                </select>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <form>
-              SQL查询语句: <input type="text" onkeyup="showHint(this.value)"> 
-              </form>
+            <br>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">D.检索电影</span>
+              <input type="text" class="form-control" placeholder="性别" aria-describedby="sizing-addon1" onkeyup="showHint_d(this.value)">
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <form>
-              SQL查询语句: <input type="text" onkeyup="showHint(this.value)"> 
-              </form>
+            <br>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">E.检索电影</span>
+              <input type="text" class="form-control" placeholder="评分" aria-describedby="sizing-addon1" onkeyup="showHint_e(this.value)">
             </div>
           </div>
 
-          <h2 class="sub-header">查询结果</h2>
+          <h2 class="sub-header"><strong>查询结果</strong></h2>
           <div class="table-responsive">
-            <span id="txtHint"></span>
+            <table>
+                <tr>
+                    <th><h3>A&emsp;<small><span id="txtHint_a"></small></span></h3></th>
+                </tr>
+                <tr>
+                    <th><h3>B&emsp;<small><span id="txtHint_b"></small></span></h3></th>
+                </tr>
+                <tr>
+                    <th><h3>C&emsp;<small><span id="txtHint_c"></small></span></h3></th>
+                </tr>
+                <tr>
+                    <th><h3>D&emsp;<small><span id="txtHint_d"></small></span></h3></th>
+                </tr>
+                <tr>
+                    <th><h3>E&emsp;<small><span id="txtHint_e"></small></span></h3></th>
+                </tr>
+            </table>
           </div>
         </div>
       </div>
